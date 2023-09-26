@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".GridLayoutCh2">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textHaiBinarian"
+            style="@style/TeksBesarBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/hai_binarian"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textMauMakanApa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/mau_makan_apa_hari_ini"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textHaiBinarian" />
+
+        <ImageView
+            android:id="@+id/imageCart"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="204dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toEndOf="@+id/textHaiBinarian"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_keranjang"
+            android:contentDescription="@string/keranjang" />
+
+        <ImageView
+            android:id="@+id/imageUser"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageCart"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_account"
+            android:contentDescription="@string/user" />
+
+        <ImageView
+            android:id="@+id/imageIklan"
+            android:layout_width="378dp"
+            android:layout_height="154dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textMauMakanApa"
+            app:srcCompat="@drawable/iklan"
+            android:contentDescription="@string/iklan_discount_30"/>
+
+        <ImageView
+            android:id="@+id/imageDiskon30"
+            android:layout_width="86dp"
+            android:layout_height="116dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@+id/imageIklan"
+            app:layout_constraintTop_toTopOf="@id/imageIklan"
+            app:srcCompat="@drawable/sale"
+            android:contentDescription="@string/diskon_30" />
+
+        <TextView
+            android:id="@+id/textDiskon30"
+            style="@style/TeksBesarBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="104dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/diskon_30"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@id/imageDiskon30"
+            app:layout_constraintTop_toTopOf="@id/imageIklan" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/pesan_makanan_lewat_aplikasi"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/imageDiskon30"
+            app:layout_constraintTop_toBottomOf="@+id/textDiskon30" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/dan_dapatkan_diskonmu"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/imageDiskon30"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <ImageView
+            android:id="@+id/imageNasi"
+            android:layout_width="73dp"
+            android:layout_height="73dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="22dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageIklan"
+            app:srcCompat="@drawable/nasi2"
+            android:contentDescription="@string/kategori_nasi"/>
+
+        <ImageView
+            android:id="@+id/imageMie"
+            android:layout_width="73dp"
+            android:layout_height="73dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="22dp"
+            app:layout_constraintStart_toEndOf="@+id/imageNasi"
+            app:layout_constraintTop_toBottomOf="@+id/imageIklan"
+            app:srcCompat="@drawable/mie2"
+            android:contentDescription="@string/kategori_mie"/>
+
+        <ImageView
+            android:id="@+id/imageSnack"
+            android:layout_width="73dp"
+            android:layout_height="73dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="22dp"
+            app:layout_constraintStart_toEndOf="@+id/imageMie"
+            app:layout_constraintTop_toBottomOf="@+id/imageIklan"
+            app:srcCompat="@drawable/snack2"
+            android:contentDescription="@string/kategori_snack"/>
+
+        <ImageView
+            android:id="@+id/imageMinuman"
+            android:layout_width="73dp"
+            android:layout_height="73dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageSnack"
+            app:layout_constraintTop_toBottomOf="@+id/imageIklan"
+            app:srcCompat="@drawable/minuman2"
+            android:contentDescription="@string/kategori_minuman"/>
+
+        <TextView
+            android:id="@+id/textNasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="39dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/nasi"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageNasi" />
+
+        <TextView
+            android:id="@+id/textMie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="76dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/mie"
+            app:layout_constraintStart_toEndOf="@+id/textNasi"
+            app:layout_constraintTop_toBottomOf="@+id/imageMie" />
+
+        <TextView
+            android:id="@+id/textSnack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/snack"
+            app:layout_constraintStart_toEndOf="@+id/textMie"
+            app:layout_constraintTop_toBottomOf="@+id/imageSnack" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="53dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="22dp"
+            android:text="@string/minuman"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textSnack"
+            app:layout_constraintTop_toBottomOf="@+id/imageMinuman" />
+
+        <TextView
+            android:id="@+id/textListMenu"
+            style="@style/TeksBesarBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/list_menu_makan"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textNasi" />
+
+        <ImageView
+            android:id="@+id/imageList"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="196dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textListMenu"
+            app:layout_constraintTop_toTopOf="@+id/textListMenu"
+            app:srcCompat="@drawable/ic_linear"
+            android:contentDescription="@string/list_layout" />
+
+        <ImageView
+            android:id="@+id/imageAyamBakar"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textListMenu"
+            app:srcCompat="@drawable/ayam_bakar"
+            android:contentDescription="@string/ayam_bakar"/>
+
+        <ImageView
+            android:id="@+id/imageAyamGoreng"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageAyamBakar"
+            app:layout_constraintTop_toBottomOf="@+id/imageList"
+            app:srcCompat="@drawable/ayam_goreng"
+            android:contentDescription="@string/ayam_goreng"/>
+
+        <TextView
+            android:id="@+id/textAyamBakar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/ayam_bakar"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageAyamBakar" />
+
+        <TextView
+            android:id="@+id/textHargaAyamBakar"
+            style="@style/TeksKecilBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:text="@string/rp_50_000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textAyamBakar" />
+
+        <TextView
+            android:id="@+id/textAyamGoreng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="128dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="105dp"
+            android:text="@string/ayam_goreng"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textAyamBakar"
+            app:layout_constraintTop_toBottomOf="@+id/imageAyamGoreng" />
+
+        <TextView
+            android:id="@+id/textHargaAyamGoreng"
+            style="@style/TeksKecilBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="149dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="136dp"
+            android:text="@string/rp_40_000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textHargaAyamBakar"
+            app:layout_constraintTop_toBottomOf="@+id/textAyamGoreng" />
+
+        <ImageView
+            android:id="@+id/imageAyamGeprek"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="14dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textHargaAyamBakar"
+            app:srcCompat="@drawable/ayam_geprek"
+            android:contentDescription="@string/ayam_geprek"/>
+
+        <ImageView
+            android:id="@+id/imageSateUsus"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageAyamGeprek"
+            app:layout_constraintTop_toBottomOf="@+id/textHargaAyamGoreng"
+            app:srcCompat="@drawable/sate_usus_ayam"
+            android:contentDescription="@string/sate_usus_ayam"/>
+
+        <TextView
+            android:id="@+id/textAyamGeprek"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/ayam_geprek"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageAyamGeprek" />
+
+        <TextView
+            android:id="@+id/textHargaAyamGeprek"
+            style="@style/TeksKecilBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:text="@string/rp_40_000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textAyamGeprek" />
+
+        <TextView
+            android:id="@+id/textSateUsus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="87dp"
+            android:text="@string/sate_usus_ayam"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textAyamGeprek"
+            app:layout_constraintTop_toBottomOf="@+id/imageSateUsus" />
+
+        <TextView
+            android:id="@+id/textHargaSateUsus"
+            style="@style/TeksKecilBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="149dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="143dp"
+            android:text="@string/rp_5_000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textHargaAyamGeprek"
+            app:layout_constraintTop_toBottomOf="@+id/textSateUsus" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
