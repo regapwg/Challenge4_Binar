@@ -22,4 +22,14 @@
             android:name="name"
             android:defaultValue="namanya kosong" />
     </fragment>
+    <fragment
+        android:id="@+id/keranjangFragment"
+        android:name="com.example.challenge2_binar.fragment.KeranjangFragment"
+        android:label="fragment_keranjang"
+        tools:layout="@layout/fragment_keranjang" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.challenge2_binar.fragment.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>

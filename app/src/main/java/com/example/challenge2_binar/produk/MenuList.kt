@@ -1,7 +1,6 @@
 package com.example.challenge2_binar.produk
 
 import android.os.Parcelable
-import android.view.Menu
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
