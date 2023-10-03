@@ -57,9 +57,6 @@ class GridMenuHolder(private val binding: ItemMenuGridBinding)
         binding.tvMenu.text =menuList.namaMenu
         binding.tvHarga.text=menuList.hargaMenu
         binding.imgView.setImageResource(menuList.imgMenu)
-//        itemView.setOnClickListener{
-//            listener(menuList)
-//        }
     }
 
 }
@@ -70,9 +67,6 @@ class LinearMenuHolder(private val binding: ItemMenuListBinding)
         binding.tvMenuu.text =menuList.namaMenu
         binding.tvHarga.text=menuList.hargaMenu
         binding.imgView.setImageResource(menuList.imgMenu)
-//        itemView.setOnClickListener{
-//            listener(menuList)
-//        }
     }
 
 }

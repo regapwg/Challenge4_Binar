@@ -28,6 +28,18 @@
     <string name="list_layout">list layout</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="profile">Profile</string>
+    <string name="foto_profile">Foto Profile</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="Email">\n</string>
+    <string name="email">Email</string>
+    <string name="no_telepon">No. Telepon</string>
+    <string name="regapwg">Regapwg</string>
+    <string name="regapwg_gmail_com">regapwg@gmail.com</string>
+    <string name="hidden">*****</string>
+    <string name="_0898888888">0898888888</string>
+    <string name="button_edit">Button Edit</string>
 
 
 </resources>

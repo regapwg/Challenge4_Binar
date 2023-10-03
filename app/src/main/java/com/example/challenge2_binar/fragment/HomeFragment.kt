@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.core.os.bundleOf
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,6 +18,7 @@ import com.example.challenge2_binar.adapter.NewAdapter
 import com.example.challenge2_binar.databinding.FragmentHomeBinding
 import com.example.challenge2_binar.produk.Kategori
 import com.example.challenge2_binar.produk.Menu
+import com.example.challenge2_binar.viewModel.HomeViewModel
 
 
 class HomeFragment : Fragment() {
@@ -25,20 +27,29 @@ class HomeFragment : Fragment() {
     private val menuData = Menu.menu
     private val kategoriData = Kategori.kategori
     private val kategoriMenuAdapter = MenuAdapterHorizontal(kategoriData)
+    private lateinit var homeViewModel: HomeViewModel
 
     private var listView = true
 
-    override fun onCreateView(
+        override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
+
         binding.rvMenuKategori.setHasFixedSize(true)
         binding.rvMenuKategori.layoutManager =
-        LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.rvMenuKategori.adapter = kategoriMenuAdapter
+
+
+
+
+        homeViewModel = ViewModelProvider(requireActivity())[HomeViewModel::class.java]
+
+
 
         binding.rvMenu.setHasFixedSize(true)
         grid()
@@ -58,6 +69,7 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
+
     private fun sourceIcView(imageView: ImageView) {
         if (listView) {
             imageView.setImageResource(R.drawable.ic_grid)
@@ -68,10 +80,9 @@ class HomeFragment : Fragment() {
 
     private fun linear() {
         binding.rvMenu.layoutManager = LinearLayoutManager(requireActivity())
-        val navController = findNavController()
         val menuAdapter = NewAdapter(menuData, isGrid = false, listener = { pickItem ->
             val bundle = bundleOf("pickItem" to pickItem)
-            navController.navigate(R.id.detailMenuFragment, bundle)
+            findNavController().navigate(R.id.action_homeFragment_to_detailMenuFragment, bundle)
         })
         binding.rvMenu.adapter = menuAdapter
     }
@@ -79,13 +90,11 @@ class HomeFragment : Fragment() {
 
     private fun grid() {
         binding.rvMenu.layoutManager = GridLayoutManager(requireActivity(), 2)
-        val navController = findNavController()
         val menuAdapter = NewAdapter(menuData, isGrid = true, listener = { pickItem ->
             val bundle = bundleOf("pickItem" to pickItem)
-            navController.navigate(R.id.detailMenuFragment, bundle)
+            findNavController().navigate(R.id.action_homeFragment_to_detailMenuFragment, bundle)
         })
         binding.rvMenu.adapter = menuAdapter
     }
-
 
 }
