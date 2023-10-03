@@ -4,14 +4,14 @@ import android.content.Context
 import androidx.core.content.edit
 
 class SharedPreference(context: Context) {
-    private val sharedPreference = "sharedPreferenceBinarMart"
-    private var prefernce = context.getSharedPreferences(sharedPreference, Context.MODE_PRIVATE)
+    private val sharedPreference = "userPrefer"
+    private var preferences = context.getSharedPreferences(sharedPreference, 0)
 
-    var isGrid: Boolean
-        set(value) {
-            prefernce.edit{
-                putBoolean("IS_GRID", value)
-            }
-        }
-        get() = prefernce.getBoolean("IS_GRID", false)
+    fun setPreferences(isListView: Boolean) {
+        preferences.edit().putBoolean("IS_GRID", isListView).apply()
+    }
+
+    fun getPreferences(): Boolean {
+        return preferences.getBoolean("IS_GRID", true)
+    }
 }

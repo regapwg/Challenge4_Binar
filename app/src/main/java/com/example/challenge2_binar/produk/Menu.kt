@@ -33,7 +33,7 @@ object Menu {
                 "Sate Ayam RSPP Jakarta",
                 "Jl. Sunset Road No.100, Kuta, Kabupaten Badung, Bali 80361",
                 "https://maps.app.goo.gl/Rd3pn6g3HZzn3fM59"),
-            MenuList(R.drawable.spaghetti,
+            MenuList(R.drawable.spaghetti_pasta,
                 "Spaghetti ala Binar",
                 "Rp 89.000",
                 "Topping daging sapi yang lembut dipadu dengan rempah-rempah dan bumbu, menciptakan cita rasa istimewa yang memanjakan lidah",

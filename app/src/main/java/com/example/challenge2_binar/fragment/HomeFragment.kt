@@ -6,13 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.challenge2_binar.R
+import com.example.challenge2_binar.SharedPreference
 import com.example.challenge2_binar.adapter.MenuAdapterHorizontal
 import com.example.challenge2_binar.adapter.NewAdapter
 import com.example.challenge2_binar.databinding.FragmentHomeBinding
@@ -29,7 +29,8 @@ class HomeFragment : Fragment() {
     private val kategoriMenuAdapter = MenuAdapterHorizontal(kategoriData)
     private lateinit var homeViewModel: HomeViewModel
 
-    private var listView = true
+
+    private lateinit var sharedPreference: SharedPreference
 
         override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,39 +45,43 @@ class HomeFragment : Fragment() {
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.rvMenuKategori.adapter = kategoriMenuAdapter
 
-
-
-
         homeViewModel = ViewModelProvider(requireActivity())[HomeViewModel::class.java]
-
-
+        sharedPreference = SharedPreference(requireContext())
+        homeViewModel.isGrid.value = sharedPreference.getPreferences()
+        homeViewModel.isGrid.observe(viewLifecycleOwner) {
+            setPrefLayout()
+        }
 
         binding.rvMenu.setHasFixedSize(true)
         grid()
+        setPrefLayout()
 
-        val buttonViewList = binding.imageList
-        buttonViewList.setOnClickListener {
-            listView = !listView
-            if (listView) {
-                linear()
-                sourceIcView(buttonViewList)
-            } else {
-                grid()
-                sourceIcView(buttonViewList)
-            }
-
-        }
         return binding.root
     }
 
 
-    private fun sourceIcView(imageView: ImageView) {
-        if (listView) {
-            imageView.setImageResource(R.drawable.ic_grid)
+    private fun viewLayout(isGrid: Boolean){
+        if (isGrid) {
+            grid()
+            binding.imageList.setImageResource( R.drawable.ic_linear)
         } else {
-            imageView.setImageResource(R.drawable.ic_linear)
+            linear()
+            binding.imageList.setImageResource( R.drawable.ic_grid)
         }
     }
+
+    private fun setPrefLayout() {
+        val buttonLayout = binding.imageList
+        val setLayout = homeViewModel.isGrid.value ?: sharedPreference.getPreferences()
+
+        viewLayout(setLayout)
+        buttonLayout.setOnClickListener {
+            val newSetLayout = !setLayout
+            homeViewModel.isGrid.value = newSetLayout
+            sharedPreference.setPreferences(newSetLayout)
+        }
+    }
+
 
     private fun linear() {
         binding.rvMenu.layoutManager = LinearLayoutManager(requireActivity())
